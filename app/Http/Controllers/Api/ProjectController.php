@@ -11,7 +11,7 @@ use App\Models\Project;
 class ProjectController extends Controller
 {
     public function index(){
-        $projects = Project::with("type","tecnologies")->paginate(20);
+        $projects = Project::with("type","tecnologies")->paginate(2);
         $response = [
         "success" => true,
         "results" => $projects,
