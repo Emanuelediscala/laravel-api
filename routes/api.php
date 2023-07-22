@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ContactRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-// PROVA API
-//  Route::get("/prova",function(){
-//     return "ok";
-//  });
+
 
 Route::get("/projects",[ProjectController::class,"index"]);
 Route::get("/projects/{id}",[ProjectController::class,"show"]);
+Route::post('/contacts', [ContactRequestController::class, "store"]);

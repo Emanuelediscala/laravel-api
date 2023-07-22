@@ -25,7 +25,7 @@ class ProjectSeeder extends Seeder
             $project = new Project();
             $project -> title = $faker -> sentence(3);
             $project -> content = $faker -> sentence(10);
-            $project->image = "placeholders/placeholder.png";
+            $project-> image = "placeholders/placeholder.png";
             $project -> deadline = $faker -> date($format = "Y-m-d", $max="now");
             $project -> type_id = $types->random()->id;
             $project -> save();
